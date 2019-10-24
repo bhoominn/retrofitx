@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RetrofitX</string>
+    <string name="error_something_went_wrong">Something went wrong</string>
+    <string name="error_no_internet">You are not connected to internet</string>
+</resources>
