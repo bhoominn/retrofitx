@@ -8,6 +8,7 @@ getResponse(getApis().getUser(), onApiSuccess = {
      txtName.text = it.name
 }, onApiError = {
      //Handle Api Error
+     Log.d(it)
 }, onNetworkError = {
      //Handle No Internet Connection
 })
