@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.nb.retrofitx.extensions.getApis
 import com.nb.retrofitx.extensions.getResponse
+import com.nb.retrofitx.extensions.toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
             txtName.text = it.name
         }, onApiError = {
             //Handle Api Error
+            toast(it)
         }, onNetworkError = {
             //Handle No Internet Connection
         })
