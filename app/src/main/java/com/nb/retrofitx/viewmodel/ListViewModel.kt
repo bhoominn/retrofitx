@@ -10,6 +10,8 @@ import io.reactivex.observers.DisposableSingleObserver
 
 class ListViewModel : ViewModel(){
 
+    // Viewmodel Class File
+
     val countries = MutableLiveData<ArrayList<Country>>()
     val loading = MutableLiveData<Boolean>()
 
