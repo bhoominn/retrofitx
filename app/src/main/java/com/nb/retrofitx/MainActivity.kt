@@ -15,10 +15,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //GET Api
-        getUser()
+//        getUser()
 
         //POST Api
-        createUser()
+//        createUser()
     }
 
     private fun createUser() {

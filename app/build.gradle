@@ -21,16 +21,16 @@ android {
         }
     }
 
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    //androidX dependencies
+    implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.core:core-ktx:1.1.0'
-
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
-
+    //retrofit dependencies
     implementation 'com.squareup.retrofit2:retrofit:2.6.2'
     implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
     implementation 'com.google.code.gson:gson:2.8.5'
