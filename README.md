@@ -29,7 +29,7 @@ getResponse(getApis().createUser(requestModel), onApiSuccess = {
     //Handle No Internet Connection
 })
 
-## Features
+## POST Example
 ```
 
 - AndroidX
