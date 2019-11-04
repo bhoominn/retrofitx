@@ -1,5 +1,6 @@
 # retrofitx
-Call API in a very simple way with Kotlin Extensions
+- Call API in a very simple way with Kotlin Extensions
+- AndroidX
 
 ## GET Example
 ```
@@ -28,10 +29,3 @@ getResponse(getApis().createUser(requestModel), onApiSuccess = {
 }, onNetworkError = {
     //Handle No Internet Connection
 })
-
-
-
-# Features
-```
-
-- AndroidX
