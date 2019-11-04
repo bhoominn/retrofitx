@@ -20,19 +20,31 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
-
 }
+
+def lifeCycleExtensionVersion = '1.1.1'
+def androiXVersion = '1.0.0'
+def retrofitVersion = '2.6.2'
+def daggerVersion = '2.25.2'
+def rxJavaVersion = '2.0.1'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     //androidX dependencies
-    implementation 'com.google.android.material:material:1.0.0'
-    implementation 'androidx.core:core-ktx:1.1.0'
+    implementation "com.google.android.material:material:$androiXVersion"
+    implementation "androidx.core:core-ktx:+"
     //retrofit dependencies
-    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
-    implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     implementation 'com.google.code.gson:gson:2.8.5'
-
+    //rxjava dependencies
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxJavaVersion"
+    //dagger dependencies
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
+    //lifecycle version
+    implementation "android.arch.lifecycle:extensions:$lifeCycleExtensionVersion"
 }
