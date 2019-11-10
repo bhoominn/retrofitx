@@ -33,7 +33,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     //androidX dependencies
     implementation "com.google.android.material:material:$androiXVersion"
-    implementation "androidx.core:core-ktx:+"
+    implementation "androidx.core:core-ktx:1.1.0"
     //retrofit dependencies
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"

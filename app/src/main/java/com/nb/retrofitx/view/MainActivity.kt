@@ -12,14 +12,20 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-
+    //region Variables
     lateinit var viewModel: ListViewModel
-    var countryListAdapter = CountryListAdapter(arrayListOf())
+    var countryListAdapter = CountryListAdapter(this)
+    //endregion
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        init()
+        observeData()
+    }
+
+    private fun init() {
         viewModel = ViewModelProviders.of(this).get(ListViewModel::class.java)
         viewModel.refresh()
 
@@ -27,12 +33,13 @@ class MainActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = countryListAdapter
         }
+        countryListAdapter.onClick = { pos, view ->
+
+        }
 
         swiperefreshlayout.setOnRefreshListener {
             viewModel.refresh()
         }
-
-        observeData()
     }
 
     private fun observeData() {
@@ -53,30 +60,4 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
-
-
-//    private fun createUser() {
-//        val requestModel = RequestModel()
-//        requestModel.name = "Bhoomin"
-
-//        getResponse(getApis().createUser(requestModel), onApiSuccess = {
-////            txtName.text = it.name
-//        }, onApiError = {
-//            //Handle Api Error
-//            toast(it)
-//        }, onNetworkError = {
-//            //Handle No Internet Connection
-//        })
-//    }
-//
-//    private fun getUser() {
-//        getResponse(getApis().getUser(), onApiSuccess = {
-////            txtName.text = it.name
-//        }, onApiError = {
-//            //Handle Api Error
-//            toast(it)
-//        }, onNetworkError = {
-//            //Handle No Internet Connection
-//        })
-//    }
 }

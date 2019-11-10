@@ -9,13 +9,15 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         app = this
-        val policy = StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
+
+        val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
+        StrictMode.setThreadPolicy(policy)
     }
 
     companion object {
         lateinit var app: App
-        val apiInterface: ApiInterface? = null
+        var apiInterface: ApiInterface? = null
+
         fun getAppInstance(): App {
             return app
         }

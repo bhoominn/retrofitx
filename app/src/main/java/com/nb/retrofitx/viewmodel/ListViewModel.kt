@@ -8,26 +8,24 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 
-class ListViewModel : ViewModel(){
+class ListViewModel : ViewModel() {
 
-    // Viewmodel Class File
-
+    // ViewModel Class File
     val countries = MutableLiveData<ArrayList<Country>>()
     val loading = MutableLiveData<Boolean>()
 
-    val disposable = CompositeDisposable()
+    private val disposable = CompositeDisposable()
 
-    fun refresh(){
+    fun refresh() {
         fetchCountries()
     }
 
-    fun fetchCountries(){
+    private fun fetchCountries() {
         loading.value = true
-        disposable.add(
-            getApis()
+        disposable.add(getApis()
                 .getCountries()
                 .subscribeOn(AndroidSchedulers.mainThread())
-                .subscribeWith(object :DisposableSingleObserver<ArrayList<Country>>(){
+                .subscribeWith(object : DisposableSingleObserver<ArrayList<Country>>() {
                     override fun onSuccess(value: ArrayList<Country>?) {
                         loading.value = false
                         countries.value = value
@@ -36,8 +34,7 @@ class ListViewModel : ViewModel(){
                     override fun onError(e: Throwable?) {
                         loading.value = false
                     }
-                })
-        )
+                }))
     }
 
     override fun onCleared() {
